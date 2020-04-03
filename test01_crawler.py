@@ -29,3 +29,11 @@ jiangsu = num[jsIndex]['children']
 for data in jiangsu:
     print(data)
 
+# 解析数据
+total = {}
+for item in num:
+    if item['name'] not in total:
+        total.update({item['name']:0})
+    for city in item['children']:
+        total[item['name']] += int(city['total']['confirm'])
+print(total)
