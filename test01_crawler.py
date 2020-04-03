@@ -5,7 +5,15 @@ import time, json, requests
 # 爬取腾讯疫情实时json数据
 url = 'https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5&callback=&_=%d'%int(time.time()*1000)
 data = json.loads(requests.get(url=url).json()['data'])
-print(data)
-print(data.keys())
+# print(data)
+# print(data.keys())
+# print(data['areaTree'][0])
 
 # 统计省份信息(34个省份)
+
+num = data['areaTree'][0]['children']
+print(len(num))
+for item in num:
+    print(item['name'], end=" ")
+else:
+    print("\n")
