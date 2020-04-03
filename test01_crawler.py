@@ -17,3 +17,15 @@ for item in num:
     print(item['name'], end=" ")
 else:
     print("\n")
+
+# 显示江苏省数据
+jsIndex = -1
+for i in num:
+    jsIndex += 1
+    if i['name'] == "江苏":
+        break
+
+jiangsu = num[jsIndex]['children']
+for data in jiangsu:
+    print(data)
+
